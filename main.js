@@ -16,7 +16,7 @@ const initializeObjectDetector = async () => {
   );
   objectDetector = await ObjectDetector.createFromOptions(vision, {
     baseOptions: {
-      modelAssetPath: './app/shared/models/efficientdet_lite0.tflite',
+      modelAssetPath: './efficientdet_lite0.tflite',
       delegate: "CPU"
     },
 

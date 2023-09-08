@@ -27,7 +27,8 @@ em {
 video {
   clear: both;
   display: block;
-  transform: rotateY(180deg);
+  /* transform: rotateY(180deg); */
+  /* transform: scaleX(-1); */
   /* -webkit-transform: rotateY(180deg); */
   /* -moz-transform: rotateY(180deg); */
   object-fit: cover;

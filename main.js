@@ -68,7 +68,7 @@ async function enableCam(event) {
     .then(function (stream) {
       video.srcObject = stream;
       video.addEventListener("loadeddata", () => {
-        video.style.transform = "scaleX(-1)";
+        // video.style.transform = "scaleX(-1)";
         predictWebcam();});
     })
     .catch((err) => {
@@ -92,6 +92,8 @@ async function predictWebcam() {
     const detections = objectDetector.detectForVideo(video, startTimeMs);
     displayVideoDetections(detections);
   }
+
+  // video.style.transform = "scaleX(-1)"
   // Call this function again to keep predicting when the browser is ready.
   window.requestAnimationFrame(predictWebcam);
 }

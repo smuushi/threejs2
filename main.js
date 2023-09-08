@@ -67,7 +67,9 @@ async function enableCam(event) {
     .getUserMedia(constraints)
     .then(function (stream) {
       video.srcObject = stream;
-      video.addEventListener("loadeddata", predictWebcam);
+      video.addEventListener("loadeddata", () => {
+        video.style.transform = "scaleX(-1)";
+        predictWebcam();});
     })
     .catch((err) => {
       console.error(err);

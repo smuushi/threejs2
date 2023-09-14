@@ -120,7 +120,7 @@ function displayVideoDetections(result) {
       'right: ' +
       ((video.offsetWidth +
         detection.boundingBox.width +
-        detection.boundingBox.originX) * -1) +
+        detection.boundingBox.originX)) +
       'px;' +
       'top: ' +
       detection.boundingBox.originY +
@@ -135,7 +135,7 @@ function displayVideoDetections(result) {
       'right: ' +
       ((video.offsetWidth +
         detection.boundingBox.width +
-        detection.boundingBox.originX) * -1) +
+        detection.boundingBox.originX)) +
       'px;' +
       'top: ' +
       detection.boundingBox.originY +

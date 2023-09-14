@@ -118,25 +118,24 @@ function displayVideoDetections(result) {
       '% confidence.';
     p.style =
       'left: ' +
-      (video.offsetWidth -
+      ((video.offsetWidth -
         detection.boundingBox.width -
-        detection.boundingBox.originX) +
+        detection.boundingBox.originX) * -1) +
       'px;' +
       'top: ' +
       detection.boundingBox.originY +
       'px; ' +
       'width: ' +
       (detection.boundingBox.width - 10) +
-      'px;' + 
-      'transform: scaleX(-1);';
+      'px;' ;
 
     const highlighter = document.createElement('div');
     highlighter.setAttribute('class', 'highlighter');
     highlighter.style =
       'left: ' +
-      (video.offsetWidth -
+      ((video.offsetWidth -
         detection.boundingBox.width -
-        detection.boundingBox.originX) +
+        detection.boundingBox.originX) * -1) +
       'px;' +
       'top: ' +
       detection.boundingBox.originY +
@@ -146,8 +145,7 @@ function displayVideoDetections(result) {
       'px;' +
       'height: ' +
       detection.boundingBox.height +
-      'px;' + 
-      'transform: scaleX(-1);';
+      'px;';
 
     liveView.appendChild(highlighter);
     liveView.appendChild(p);

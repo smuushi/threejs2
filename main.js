@@ -116,36 +116,20 @@ function displayVideoDetections(result) {
       ' - with ' +
       Math.round(parseFloat(detection.categories[0].score) * 100) +
       '% confidence.';
+    const mirroredWidth = video.offsetWidth - detection.boundingBox.width - detection.boundingBox.originX;
     p.style =
-      'right: ' +
-      ((video.offsetWidth -
-        detection.boundingBox.width -
-        detection.boundingBox.originX)) +
-      'px;' +
-      'top: ' +
-      detection.boundingBox.originY +
-      'px; ' +
-      'width: ' +
-      (detection.boundingBox.width - 10) +
-      'px;' ;
+      'left: ' + mirroredWidth + 'px;' +
+      'top: ' + detection.boundingBox.originY + 'px;' +
+      'width: ' + (detection.boundingBox.width - 10) + 'px;' +
+      'transform: scaleX(-1);'
 
     const highlighter = document.createElement('div');
     highlighter.setAttribute('class', 'highlighter');
     highlighter.style =
-      'right: ' +
-      ((video.offsetWidth -
-        detection.boundingBox.width -
-        detection.boundingBox.originX) * -1) +
-      'px;' +
-      'top: ' +
-      detection.boundingBox.originY +
-      'px;' +
-      'width: ' +
-      (detection.boundingBox.width - 10) +
-      'px;' +
-      'height: ' +
-      detection.boundingBox.height +
-      'px;';
+    'left: ' + mirroredWidth + 'px;' +
+    'top: ' + detection.boundingBox.originY + 'px;' +
+    'width: ' + (detection.boundingBox.width - 10) + 'px;' +
+    'height: ' + detection.boundingBox.height + 'px;';
 
     liveView.appendChild(highlighter);
     liveView.appendChild(p);

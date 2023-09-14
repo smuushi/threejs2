@@ -127,7 +127,8 @@ function displayVideoDetections(result) {
       'px; ' +
       'width: ' +
       (detection.boundingBox.width - 10) +
-      'px;';
+      'px;' + 
+      'transform: scaleX(-1);';
 
     const highlighter = document.createElement('div');
     highlighter.setAttribute('class', 'highlighter');
@@ -145,7 +146,8 @@ function displayVideoDetections(result) {
       'px;' +
       'height: ' +
       detection.boundingBox.height +
-      'px;';
+      'px;' + 
+      'transform: scaleX(-1);';
 
     liveView.appendChild(highlighter);
     liveView.appendChild(p);

@@ -118,15 +118,14 @@ function displayVideoDetections(result) {
       '% confidence.';
     const mirroredWidth = video.offsetWidth - detection.boundingBox.width - detection.boundingBox.originX;
     p.style =
-      'left: ' + mirroredWidth + 'px;' +
+      'right: ' + mirroredWidth + 'px;' +
       'top: ' + detection.boundingBox.originY + 'px;' +
-      'width: ' + (detection.boundingBox.width - 10) + 'px;' +
-      'transform: scaleX(-1);'
+      'width: ' + (detection.boundingBox.width - 10) + 'px;';
 
     const highlighter = document.createElement('div');
     highlighter.setAttribute('class', 'highlighter');
     highlighter.style =
-    'left: ' + mirroredWidth + 'px;' +
+    'right: ' + mirroredWidth + 'px;' +
     'top: ' + detection.boundingBox.originY + 'px;' +
     'width: ' + (detection.boundingBox.width - 10) + 'px;' +
     'height: ' + detection.boundingBox.height + 'px;';

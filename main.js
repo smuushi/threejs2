@@ -116,7 +116,7 @@ function displayVideoDetections(result) {
       ' - with ' +
       Math.round(parseFloat(detection.categories[0].score) * 100) +
       '% confidence.';
-    const mirroredWidth = video.offsetWidth - detection.boundingBox.width - detection.boundingBox.originX + 10;
+    const mirroredWidth = video.offsetWidth - detection.boundingBox.width - detection.boundingBox.originX - 10;
     p.style =
       'right: ' + mirroredWidth + 'px;' +
       'top: ' + detection.boundingBox.originY + 'px;' +

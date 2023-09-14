@@ -132,7 +132,7 @@ function displayVideoDetections(result) {
     const highlighter = document.createElement('div');
     highlighter.setAttribute('class', 'highlighter');
     highlighter.style =
-      'left: ' +
+      'right: ' +
       ((video.offsetWidth -
         detection.boundingBox.width -
         detection.boundingBox.originX) * -1) +

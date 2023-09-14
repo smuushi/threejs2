@@ -118,8 +118,8 @@ function displayVideoDetections(result) {
       '% confidence.';
     p.style =
       'right: ' +
-      ((video.offsetWidth +
-        detection.boundingBox.width +
+      ((video.offsetWidth -
+        detection.boundingBox.width -
         detection.boundingBox.originX)) +
       'px;' +
       'top: ' +
@@ -133,9 +133,9 @@ function displayVideoDetections(result) {
     highlighter.setAttribute('class', 'highlighter');
     highlighter.style =
       'right: ' +
-      ((video.offsetWidth +
-        detection.boundingBox.width +
-        detection.boundingBox.originX)) +
+      ((video.offsetWidth -
+        detection.boundingBox.width -
+        detection.boundingBox.originX) * -1) +
       'px;' +
       'top: ' +
       detection.boundingBox.originY +

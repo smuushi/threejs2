@@ -120,14 +120,14 @@ function displayVideoDetections(result) {
     p.style =
       'right: ' + mirroredWidth + 'px;' +
       'top: ' + detection.boundingBox.originY + 'px;' +
-      'width: ' + (detection.boundingBox.width - 10) + 'px;';
+      'width: ' + (detection.boundingBox.width) + 'px;';
 
     const highlighter = document.createElement('div');
     highlighter.setAttribute('class', 'highlighter');
     highlighter.style =
     'right: ' + mirroredWidth + 'px;' +
     'top: ' + detection.boundingBox.originY + 'px;' +
-    'width: ' + (detection.boundingBox.width - 10) + 'px;' +
+    'width: ' + (detection.boundingBox.width) + 'px;' +
     'height: ' + detection.boundingBox.height + 'px;';
 
     liveView.appendChild(highlighter);
